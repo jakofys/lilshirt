@@ -1,0 +1,20 @@
+version: 2
+services:
+  lilshirt-api:
+    env_file: .env.local
+    build:
+      context: .
+      dockerfile: ./build/Containerfile
+      args:
+        VERSION: "v1.0.4"
+    ports:
+      - 8080:8080
+
+  database:
+    image: docker.io/postgres:16.3-alpine3.20
+    environment:
+      POSTGRES_PASSWORD: 1234567890
+      POSTGRES_DB: lilshirt
+      POSTGRES_USER: lilshirt
+    volumes:
+      - ./var/postgresql:/var/lib/postgresql/data

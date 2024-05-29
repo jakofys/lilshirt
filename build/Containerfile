@@ -1,0 +1,25 @@
+FROM --plateform=linux/amd64 docker.io/golang:1.22.3-alpine3.20 AS build
+
+ARG VERSION="v1.0.1"
+
+RUN apk -U upgrade
+
+WORKDIR /app 
+
+COPY . .
+
+# RUN go get
+
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o lilshirt -ldflags="-X 'main.Version=${VERSION}'" ./cmd/lilshirt/...
+
+FROM --plateform=linux/amd64 docker.io/golang:1.22.3-alpine3.20
+
+WORKDIR /bin
+
+COPY  --from=build /app/lilshirt .
+
+EXPOSE 8080
+
+VOLUME ./var ../var
+
+ENTRYPOINT ["./lilshirt"]
