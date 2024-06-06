@@ -9,8 +9,8 @@ import (
 )
 
 type LinkRepository interface {
-	Save(context.Context, Link) (*Link, error)
-	Link(context.Context, string) (*Link, error)
+	Save(ctx context.Context, link Link) (*Link, error)
+	Link(ctx context.Context, id string) (*Link, error)
 }
 
 type linkRepository struct {

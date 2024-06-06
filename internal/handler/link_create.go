@@ -12,7 +12,7 @@ func (h *handler) LinkCreate(ctx context.Context, request server.LinkCreateReque
 		return nil, err
 	}
 	return server.LinkCreate201JSONResponse{
-		server.LinkCreatedResponseJSONResponse{
+		LinkCreatedResponseJSONResponse: server.LinkCreatedResponseJSONResponse{
 			ID:        link.ID,
 			Long:      *link.Long,
 			Short:     *link.Short,

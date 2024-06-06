@@ -1,6 +1,6 @@
 version: 2
 services:
-  lilshirt-api:
+  fluid-api:
     env_file: .env.local
     build:
       context: .
@@ -16,8 +16,8 @@ services:
     image: docker.io/postgres:16.3-alpine3.20
     environment:
       POSTGRES_PASSWORD: 1234567890
-      POSTGRES_DB: lilshirt
-      POSTGRES_USER: lilshirt
+      POSTGRES_DB: fluid
+      POSTGRES_USER: fluid
     volumes:
       - ./var/postgresql:/var/lib/postgresql/data
     heathz: pg_isready

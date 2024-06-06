@@ -7,11 +7,16 @@ import (
 )
 
 func (h *handler) LinkGet(ctx context.Context, request server.LinkGetRequestObject) (server.LinkGetResponseObject, error) {
-	l, err := h.linkSrv.GetLink(ctx, request.LinkId)
+	link, err := h.linkSrv.GetLink(ctx, request.LinkId)
 	if err != nil {
 		return nil, err
 	}
 	return server.LinkGet200JSONResponse{
-		server.LinkGetResponseJSONResponse{},
+		LinkGetResponseJSONResponse: server.LinkGetResponseJSONResponse{
+			ID:        link.ID,
+			Long:      *link.Long,
+			Short:     *link.Short,
+			CreatedAt: link.CreatedAt,
+			ExpiredAt: link.ExpiredAt},
 	}, nil
 }
