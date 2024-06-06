@@ -1,0 +1,8 @@
+name: hostname
+in: path
+description: corresponding hostname
+required: true
+allowEmptyValue: false
+schema:
+  type: string
+  format: hostname

@@ -1,0 +1,19 @@
+operationId: LinkList
+summary: List a redirection link
+description: List a redirection link
+tags:
+  - Link
+
+responses:
+  200:
+    $ref: ../components/responses/LinkListResponse.yaml
+  400:
+    $ref: ../components/responses/ErrorBadRequestResponse.yaml
+  401:
+    $ref: ../components/responses/ErrorUnauthorizedResponse.yaml
+  403:
+    $ref: ../components/responses/ErrorForbiddenResponse.yaml
+  409:
+    $ref: ../components/responses/ErrorConflictResponse.yaml
+  500:
+    $ref: ../components/responses/ErrorInternalServerResponse.yaml

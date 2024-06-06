@@ -1,0 +1,5 @@
+description: Error encounter when request user made can't be performed on resource that is read only
+content:
+  application/problem+json:
+    schema:
+      $ref: ../schemas/Error.yaml

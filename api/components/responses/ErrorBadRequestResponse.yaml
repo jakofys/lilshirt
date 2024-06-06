@@ -1,0 +1,5 @@
+description: Error encounter when client payload isn't valid
+content:
+  application/problem+json:
+    schema:
+      $ref: ../schemas/Error.yaml

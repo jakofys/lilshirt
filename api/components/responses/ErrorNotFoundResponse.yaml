@@ -1,0 +1,5 @@
+description: Error encounter when resource does not exists
+content:
+  application/problem+json:
+    schema:
+      $ref: ../schemas/Error.yaml

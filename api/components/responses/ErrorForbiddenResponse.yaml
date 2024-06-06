@@ -1,0 +1,5 @@
+description: Error encounter when the server refuse access to it
+content:
+  application/problem+json:
+    schema:
+      $ref: ../schemas/Error.yaml

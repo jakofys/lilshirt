@@ -1,0 +1,21 @@
+title: Error
+description: client error indicates some details about error
+type: object
+properties:
+  title:
+    type: string
+    description: the identifiable name
+
+  instance:
+    type: string
+    format: uri
+    description: indicate the resource on which the operation is applied
+  
+  type:
+    type: string
+    description: point uri of the title error
+    format: url
+
+  detail:
+    type: string
+    description: some detail about what error means

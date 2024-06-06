@@ -1,0 +1,10 @@
+title: LinkCreation
+description: payload to create a link redirection from long one
+type: object
+required:
+  - long
+properties:
+  long:
+    type: string
+    format: url
+    description: target url of the redirection

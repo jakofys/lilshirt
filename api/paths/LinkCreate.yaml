@@ -1,0 +1,22 @@
+operationId: LinkCreate
+summary: Create a redirection link
+description: Create a redirection link
+tags:
+  - Link
+
+requestBody:
+  $ref:  ../components/requests/LinkCreationRequest.yaml
+
+responses:
+  201:
+    $ref: ../components/responses/LinkCreatedResponse.yaml
+  400:
+    $ref: ../components/responses/ErrorBadRequestResponse.yaml
+  401:
+    $ref: ../components/responses/ErrorUnauthorizedResponse.yaml
+  403:
+    $ref: ../components/responses/ErrorForbiddenResponse.yaml
+  409:
+    $ref: ../components/responses/ErrorConflictResponse.yaml
+  500:
+    $ref: ../components/responses/ErrorInternalServerResponse.yaml

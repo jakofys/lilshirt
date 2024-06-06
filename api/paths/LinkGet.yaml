@@ -1,0 +1,22 @@
+operationId: LinkGet
+summary: Get a redirection link
+description: Get a redirection link
+tags:
+  - Link
+
+parameters:
+  - $ref:  ../components/parameters/LinkId.yaml
+
+responses:
+  200:
+    $ref: ../components/responses/LinkGetResponse.yaml
+  400:
+    $ref: ../components/responses/ErrorBadRequestResponse.yaml
+  404:
+    $ref: ../components/responses/ErrorNotFoundResponse.yaml
+  401:
+    $ref: ../components/responses/ErrorUnauthorizedResponse.yaml
+  403:
+    $ref: ../components/responses/ErrorForbiddenResponse.yaml
+  500:
+    $ref: ../components/responses/ErrorInternalServerResponse.yaml

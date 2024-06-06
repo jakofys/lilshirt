@@ -1,0 +1,5 @@
+description: When correctly create and bind long to short redirection url
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/Link.yaml

@@ -1,0 +1,4 @@
+description: Redirect from short to long url
+headers:
+  Location: 
+    $ref: ../headers/Location.yaml

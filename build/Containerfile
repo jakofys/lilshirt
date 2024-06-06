@@ -6,20 +6,24 @@ RUN apk -U upgrade
 
 WORKDIR /app 
 
+COPY go.sum go.mod .
+
+RUN go mod download
+
 COPY . .
 
 # RUN go get
 
-RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o lilshirt -ldflags="-X 'main.Version=${VERSION}'" ./cmd/lilshirt/...
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o fluid -ldflags="-X 'main.Version=${VERSION}'" ./cmd/lilshirt/...
 
 FROM --plateform=linux/amd64 docker.io/golang:1.22.3-alpine3.20
 
 WORKDIR /bin
 
-COPY  --from=build /app/lilshirt .
+COPY  --from=build /app/fluid .
 
 EXPOSE 8080
 
 VOLUME ./var ../var
 
-ENTRYPOINT ["./lilshirt"]
+ENTRYPOINT ["./fluid"]

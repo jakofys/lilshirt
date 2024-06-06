@@ -1,0 +1,25 @@
+openapi: 3.0.0
+info:
+  title: Fluid
+  description: Fluid 
+  version: 1.0.0
+
+paths:
+
+  # Redirection endpoint 
+  /{hostname}/{slug}:
+    get:
+      $ref: ./paths/LinkRedirect.yaml
+
+  # Link management endpoint 
+  /links:
+    post:
+      $ref: ./paths/LinkCreate.yaml
+    get:
+      $ref: ./paths/LinkList.yaml
+
+  /links/{linkId}:
+    get:
+      $ref: ./paths/LinkGet.yaml
+    delete:
+      $ref: ./paths/LinkDelete.yaml

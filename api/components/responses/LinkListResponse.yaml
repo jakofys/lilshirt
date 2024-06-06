@@ -1,0 +1,7 @@
+description: Retrieve link information
+content:
+  application/json:
+    schema:
+      type: array
+      items: 
+        $ref: ../schemas/Link.yaml

@@ -9,6 +9,8 @@ services:
         VERSION: "v1.0.4"
     ports:
       - 8080:8080
+    depend_on:
+      - database
 
   database:
     image: docker.io/postgres:16.3-alpine3.20
@@ -18,3 +20,4 @@ services:
       POSTGRES_USER: lilshirt
     volumes:
       - ./var/postgresql:/var/lib/postgresql/data
+    heathz: pg_isready

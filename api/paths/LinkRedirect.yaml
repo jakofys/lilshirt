@@ -1,0 +1,23 @@
+operationId: LinkRedirect
+summary: Redirect
+description: Redirect a to targeted link
+tags:
+  - Link
+
+parameters:
+  - $ref:  ../components/parameters/Hostname.yaml
+  - $ref:  ../components/parameters/Slug.yaml
+
+responses:
+  301:
+    $ref: ../components/responses/LinkRedirectedResponse.yaml
+  400:
+    $ref: ../components/responses/ErrorBadRequestResponse.yaml
+  401:
+    $ref: ../components/responses/ErrorUnauthorizedResponse.yaml
+  403:
+    $ref: ../components/responses/ErrorForbiddenResponse.yaml
+  409:
+    $ref: ../components/responses/ErrorConflictResponse.yaml
+  500:
+    $ref: ../components/responses/ErrorInternalServerResponse.yaml

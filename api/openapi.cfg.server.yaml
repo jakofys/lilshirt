@@ -1,0 +1,6 @@
+package: server
+generate:
+  gorilla-server: true
+  strict-server: true
+  embedded-spec: true
+output: internal/server/server.gen.go
